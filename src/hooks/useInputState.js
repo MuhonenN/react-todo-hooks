@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default initialValue => {
     const [value, setValue] = useState(initialValue);
     const handleChange = e => setValue(e.target.value);
-    const reset = () => setValue('');
+    const clearValue = () => setValue('');
 
-    return [value, handleChange, reset];
+    return [value, handleChange, clearValue];
 };

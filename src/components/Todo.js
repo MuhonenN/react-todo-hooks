@@ -1,9 +1,9 @@
 import React, { useContext, memo } from 'react';
 import { DispatchContext } from '../contexts/todos.context';
-import useStyles from '../styles/TodoStyles.js';
-import { REMOVE_TODO, TOGGLE_TODO } from '../constants/actions';
 import EditTodoForm from './EditTodoForm';
 import useToggleState from '../hooks/useToggleState';
+import useStyles from '../styles/TodoStyles.js';
+import { REMOVE_TODO, TOGGLE_TODO } from '../constants/actions';
 
 function Todo({ id, task, completed }) {
     const classes = useStyles();
@@ -25,7 +25,7 @@ function Todo({ id, task, completed }) {
     return (
         <li
             className={classes.Todo}
-            onClick={() => dispatchEvent({ type: TOGGLE_TODO, id })}
+            onClick={() => dispatch({ type: TOGGLE_TODO, id })}
         >
             <span
                 style={{
@@ -42,6 +42,14 @@ function Todo({ id, task, completed }) {
                     onClick={e => {
                         e.stopPropagation();
                         dispatch({ type: REMOVE_TODO, id });
+                    }}
+                />
+                <i
+                    style={{ color: '#58b2dc' }}
+                    className="fas fa-pen"
+                    onClick={e => {
+                        e.stopPropagation();
+                        toggle();
                     }}
                 />
             </div>

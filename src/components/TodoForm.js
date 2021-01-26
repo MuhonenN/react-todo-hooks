@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { DispatchContext } from '../contexts/todos.context';
 import useInputState from '../hooks/useInputState';
 import useStyles from '../styles/TodoFormStyles';
-import { ADD_TODO } from '../constants/actions.js';
+import { ADD_TODO } from '../constants/actions';
 
 function TodoForm() {
     const classes = useStyles();
